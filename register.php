@@ -16,9 +16,11 @@
 
 		if ($conn->query($sql_insert) === TRUE) {
 			echo "New record created successfully";
+			header("location: confirmation.html");
 		} else {
 			echo mysqli_error($conn);
 		}
 	}
 		
 ?>
+
