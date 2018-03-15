@@ -29,7 +29,7 @@ include('session.php');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="home-user.php">
                         <img src="images/logo.png">
                         petmalu
                     </a>
