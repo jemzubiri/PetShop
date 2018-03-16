@@ -1,3 +1,7 @@
+<?php
+include('session.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +32,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="index.html">
+	      <a class="navbar-brand" href="home-user.php">
 	      	<img src="images/logo.png">
 	      	petmalu
 	      </a>
@@ -36,12 +40,12 @@
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 	      <ul class="nav navbar-nav navbar-right" >
-	        <li class="active"><a href="index.html">home<span class="sr-only">(current)</span></a></li>
-	        <li><a href="about-us.html">about us</a></li>
+	        <li class="active"><a href="home-user.php">home<span class="sr-only">(current)</span></a></li>
+	        <li><a href="about-us.php">about us</a></li>
 	        <li><a href="#">products</a></li>
-	        <li><a href="gallery.html">gallery</a></li>
-	        <li><a href="contact-us.html">contact us</a></li>
-	        <!-- <li><a href="schedule.html">schedule</a></li> -->
+	        <li><a href="gallery.php">gallery</a></li>
+	        <li><a href="contact-us.php">contact us</a></li>
+	        <li><a href="schedule.php">schedule</a></li>
 	        <li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
 	      </ul>
 	    </div>
@@ -51,7 +55,7 @@
 	<section style="height: 90vh;">
 		<div class="container">
 			<center>
-			<h1>You are now registered!</h1>
+			<h1>Your grooming schedule has been recorded!</h1>
 			<img src="images/logo.png" style="width: 300px;height: 300px;">
 			</center>
 		</div>

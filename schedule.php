@@ -60,7 +60,7 @@ include('session.php');
 				</div>
 			</div>
 		</div>
-		
+	
 		<!-- Modals -->
 		<div class="modal fade" id="grooming-mdl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -70,157 +70,159 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Grooming</h2>
 					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
-							<select class="form-control" id="branch">
-								<option>SM City Calamba</option>
-								<option>Robison's Town Mall, Los Banos</option>
-								<option>Sunstar Mall</option>
-							</select>
+					<form role="form" method="post" action="grooming.php">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="branch">Choose your nearest Petmalu Branch to you!</label>
+								<select class="form-control" id="branch" name="branch">
+									<option>SM City Calamba</option>
+									<option>Robison's Town Mall, Los Banos</option>
+									<option>Sunstar Mall</option>
+								</select>
+							</div>
+							<div class="row">
+								<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
+									<div class="form-group">
+										<label for="date">Choose the date for your schedule:</label>
+										<input type="date" class="form-control" id="date" name="date"> 
+									</div>
+								</div>
+								<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
+									<div class="form-group">
+										<label for="pet-age">Pet Age:</label>
+										<input type="number" class="form-control" id="petage" name="petage">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4" style="padding-left: 15px; padding-right: 15px;">
+									<div class="form-group">
+										<label>Gender</label>
+										<div class="radio">
+											<label><input type="radio" id="petgender" name="petgender" value="Male">Male</label>
+										</div>
+										<div class="radio">
+											<label><input type="radio" id="petgender" name="petgender" value="Female">Female</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4" style="padding-left: 15px; padding-right: 15px;">
+									<div class="form-group">
+										<label>Size of your pet</label>
+										<div class="radio">
+											<label><input type="radio" id="petsize" name="petsize" value="Small">Small</label>
+										</div>
+										<div class="radio">
+											<label><input type="radio" id="petsize" name="petsize" value="Medium">Medium</label>
+										</div>
+										<div class="radio">
+											<label><input type="radio" id="petsize" name="petsize" value="Large">Large</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Grooming Package (Bath, shampoo, blowdry, ear cleaning, nail trim, sanitary trim, teeth brushing, haircut)for small/medium - large/giant breeds</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<br>
+										<b>Php 450/650/850</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Ear Cleaning</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 75</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Bath and Blowdry (for small/medium - large/giant breeds)</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 200/400/600</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Pet Massage</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 200</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Peticure Nail Caps Removal</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 100</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Teeth Brushing</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 75</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Eye wash</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 75</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Mouth Wash</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 75</b>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="radio">
+											<label><input type="checkbox" name="checkbox">Nail Trim and Filing</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<b>Php 100</b>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
-								<div class="form-group">
-									<label for="date">Choose the date for your schedule:</label>
-									<input type="date" class="form-control" id="date">
-								</div>
-							</div>
-							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
-								<div class="form-group">
-									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age">
-								</div>
-							</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" name="groomSubmit">Submit</button>
 						</div>
-						<div class="row">
-							<div class="col-md-4" style="padding-left: 15px; padding-right: 15px;">
-								<div class="form-group">
-									<label>Gender</label>
-									<div class="radio">
-										<label><input type="radio" name="optradio1">Male</label>
-									</div>
-									<div class="radio">
-										<label><input type="radio" name="optradio1">Female</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4" style="padding-left: 15px; padding-right: 15px;">
-								<div class="form-group">
-									<label>Size of your pet</label>
-									<div class="radio">
-										<label><input type="radio" name="optradio2">Small</label>
-									</div>
-									<div class="radio">
-										<label><input type="radio" name="optradio2">Medium</label>
-									</div>
-									<div class="radio">
-										<label><input type="radio" name="optradio2">Large</label>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Grooming Package (Bath, shampoo, blowdry, ear cleaning, nail trim, sanitary trim, teeth brushing, haircut)for small/medium - large/giant breeds</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<br>
-									<b>Php 450/650/850</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Ear Cleaning</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 75</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Bath and Blowdry (for small/medium - large/giant breeds)</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 200/400/600</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Pet Massage</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 200</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Peticure Nail Caps Removal</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 100</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Teeth Brushing</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 75</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Eye wash</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 75</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Mouth Wash</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 75</b>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="radio">
-										<label><input type="checkbox" name="checkbox">Nail Trim and Filing</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<b>Php 100</b>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
+
 		<!--Clinic Services-->
 		<div class="modal fade" id="services-mdl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
