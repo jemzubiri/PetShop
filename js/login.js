@@ -8,7 +8,6 @@ $('#btnLogin').on('click',function(){
 			url : "login.php",
 			data:{email:username, password:password},
 			success: function(data){
-				alert(data);
 				if(data == "success"){
 					window.location="home-user.php";
 				}
