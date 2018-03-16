@@ -2,11 +2,6 @@
 // Starting Session
 session_start();
 
-// Variable To Store Error Message
-$error=''; 
-if (isset($_POST['submit'])) {
-	
-
 		// Define $username and $password
 		$username=$_POST['email'];
 		$password=$_POST['password'];
@@ -25,25 +20,14 @@ if (isset($_POST['submit'])) {
 		$query = mysqli_query($connection,"select * from usertbl where userPassword='$password' AND userEmail='$username'");
 		$rows = mysqli_num_rows($query);
 		
-		echo "ASD";
 		if ($rows == 1){
 			$_SESSION['login_user']=$username; // Initializing Session
-			header("location: home-user.php"); // Redirecting To Other Page
+			// header("location: home-user.php"); // Redirecting To Other Page
+			echo "success";
 		} 
 		else{
-			console.log("asd");
-			header("location: index.html");
-			echo "<script type=text/javascript>",
-				 "errorFunction();",
-				 "</script>";
+			echo "error";
 		}
 		mysqli_close($connection); // Closing Connection
-
+	
 ?>
-
-<script type="text/javascript">
-function errorFunction(){
-	alert("asd");
-	$('#loginError').text("Fill up empty fields.");
-}
-</script>
