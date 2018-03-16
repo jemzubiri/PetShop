@@ -6,11 +6,7 @@ session_start();
 $error=''; 
 if (isset($_POST['submit'])) {
 	
-	if (empty($_POST['email']) || empty($_POST['password'])) {
-		$error = "Username or Password is invalid";
-	}
-	
-	else{
+
 		// Define $username and $password
 		$username=$_POST['email'];
 		$password=$_POST['password'];
@@ -28,16 +24,26 @@ if (isset($_POST['submit'])) {
 		// SQL query to fetch information of registerd users and finds user match.
 		$query = mysqli_query($connection,"select * from usertbl where userPassword='$password' AND userEmail='$username'");
 		$rows = mysqli_num_rows($query);
-
+		
+		echo "ASD";
 		if ($rows == 1){
 			$_SESSION['login_user']=$username; // Initializing Session
 			header("location: home-user.php"); // Redirecting To Other Page
-			echo "Success";
 		} 
 		else{
-			echo "Username or Password is Invalid";
+			console.log("asd");
+			header("location: index.html");
+			echo "<script type=text/javascript>",
+				 "errorFunction();",
+				 "</script>";
 		}
 		mysqli_close($connection); // Closing Connection
-	}
-}
+
 ?>
+
+<script type="text/javascript">
+function errorFunction(){
+	alert("asd");
+	$('#loginError').text("Fill up empty fields.");
+}
+</script>
