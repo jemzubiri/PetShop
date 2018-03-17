@@ -156,7 +156,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Pet Massage</label>
+											<label><input type="checkbox" name="checkbox" value="Pet Masssage">Pet Massage</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -166,7 +166,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Peticure Nail Caps Removal</label>
+											<label><input type="checkbox" name="checkbox" value="Peticure Nail Caps Removal">Peticure Nail Caps Removal</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -176,7 +176,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Teeth Brushing</label>
+											<label><input type="checkbox" name="checkbox" value="Teeth Brushing">Teeth Brushing</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -186,7 +186,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Eye wash</label>
+											<label><input type="checkbox" name="checkbox" value="Eye wash">Eye wash</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -196,7 +196,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Mouth Wash</label>
+											<label><input type="checkbox" name="checkbox" value="Mouth Wash">Mouth Wash</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -206,7 +206,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Nail Trim and Filing</label>
+											<label><input type="checkbox" name="checkbox"  value="Nail Trim and Filing">Nail Trim and Filing</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -287,18 +287,18 @@ include('session.php');
 						Select:</label>
 						<div class="row">
 							<div class="col-md-6">
-								<ul style="list-style-type: none;">
-									<li><div class="radio"><label><input type="checkbox">Dentistry</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Surgeries</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Prescription medication and diets</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Deworming</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Senior pet health</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Comprehensive physical examinations</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Laboratory services</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Confinement for ill patients</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Health Certificates</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Vaccination for puppies and kittens</label></div></li>
-									<li><div class="radio"><label><input type="checkbox">Wellness consultations and examinations</label></div></li>
+								<ul style="list-style-type: none;" id="serveList" name="serveList">
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Dentistry">Dentistry</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Surgeries">Surgeries</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Prescription medication and diets">Prescription medication and diets</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Deworming">Deworming</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Senior pet health">Senior pet health</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Comprehensive physical examinations">Comprehensive physical examinations</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Laboratory services">Laboratory services</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Confinement for ill patients">Confinement for ill patients</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Health Certificates">Health Certificates</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
 								</ul>
 							</div>
 						</div>
@@ -341,6 +341,9 @@ include('session.php');
 		</footer>
 
 		<script type="text/javascript">
+		var forms = document.forms[0];
+		var strConcat = "";
+		var ctr = 0;
 		    $('#concat-grooming').on('click', function() {
 			    var val = $(':checked').map(function() {
 			        return this.value;
