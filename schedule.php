@@ -76,7 +76,7 @@ include('session.php');
 								<label for="branch">Choose your nearest Petmalu Branch to you!</label>
 								<select class="form-control" id="branch" name="branch">
 									<option>SM City Calamba</option>
-									<option>Robison's Town Mall, Los Banos</option>
+									<option>Robisons Town Mall Los Banos</option>
 									<option>Sunstar Mall</option>
 								</select>
 							</div>
@@ -238,7 +238,7 @@ include('session.php');
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
 							<select class="form-control" id="branch" name="serveBranch">
 								<option>SM City Calamba</option>
-								<option>Robison's Town Mall, Los Banos</option>
+								<option>Robisons Town Mall Los Banos</option>
 								<option>Sunstar Mall</option>
 							</select>
 						</div>
@@ -288,17 +288,17 @@ include('session.php');
 						<div class="row">
 							<div class="col-md-6">
 								<ul style="list-style-type: none;" id="serveList" name="serveList">
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Dentistry">Dentistry</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Surgeries">Surgeries</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Prescription medication and diets">Prescription medication and diets</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Deworming">Deworming</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Senior pet health">Senior pet health</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Comprehensive physical examinations">Comprehensive physical examinations</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Laboratory services">Laboratory services</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Confinement for ill patients">Confinement for ill patients</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Health Certificates">Health Certificates</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="srvList" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name=""value="Dentistry">Dentistry</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Surgeries">Surgeries</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Prescription medication and diets">Prescription medication and diets</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Deworming">Deworming</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Senior pet health">Senior pet health</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Comprehensive physical examinations">Comprehensive physical examinations</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Laboratory services">Laboratory services</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Confinement for ill patients">Confinement for ill patients</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Health Certificates">Health Certificates</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
 								</ul>
 							</div>
 						</div>
@@ -343,11 +343,16 @@ include('session.php');
 		<script type="text/javascript">
 		var forms = document.forms[0];
 		var strConcat = "";
-		var ctr = 0;
 		    $('#concat-grooming').on('click', function() {
-			    var val = $(':checked').map(function() {
-			        return this.value;
-			    }).get()
+				for(var i=0; i<forms.length ; i++){
+					if(forms[i].checked && forms[i].type =="checkbox"){
+						strConcat = strConcat + forms[i].value + ",";
+					}
+				}
+				alert(strConcat);
+			    // var val = $(':checked').map(function() {
+			    //     return this.value;
+			    // }).get()
 
 			    // alert(val);
 			});
