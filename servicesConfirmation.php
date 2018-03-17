@@ -46,7 +46,7 @@ include('session.php');
 	        <li><a href="gallery.php">gallery</a></li>
 	        <li><a href="contact-us.php">contact us</a></li>
 	        <li><a href="schedule.php">schedule</a></li>
-	        <li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
+	        <li><a href="logout.php" >logout</a></li>
 	      </ul>
 	    </div>
 	  </div>
@@ -259,8 +259,6 @@ include('session.php');
 	        <li><a href="index.html">home</a></li>
 	     </ul>
 	</footer>
-
-
 
 
 
