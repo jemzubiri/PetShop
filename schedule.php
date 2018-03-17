@@ -125,7 +125,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Grooming Package (Bath, shampoo, blowdry, ear cleaning, nail trim, sanitary trim, teeth brushing, haircut)for small/medium - large/giant breeds</label>
+											<label><input type="checkbox" name="checkbox" value="Grooming Package (Bath, shampoo, blowdry, ear cleaning, nail trim, sanitary trim, teeth brushing, haircut)for small/medium - large/giant breeds">Grooming Package (Bath, shampoo, blowdry, ear cleaning, nail trim, sanitary trim, teeth brushing, haircut)for small/medium - large/giant breeds</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -136,7 +136,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Ear Cleaning</label>
+											<label><input type="checkbox" name="checkbox" value="Ear Cleaning">Ear Cleaning</label>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -146,7 +146,7 @@ include('session.php');
 								<div class="row">
 									<div class="col-md-6">
 										<div class="radio">
-											<label><input type="checkbox" name="checkbox">Bath and Blowdry (for small/medium - large/giant breeds)</label>
+											<label><input type="checkbox" name="checkbox" value="Bath and Blowdry (for small/medium - large/giant breeds)">Bath and Blowdry (for small/medium - large/giant breeds)</label>
 										</div>
 									</div>
 									<div class="col-md-6">
