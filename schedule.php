@@ -216,7 +216,7 @@ include('session.php');
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary" name="groomSubmit">Submit</button>
+							<button type="submit" class="btn btn-primary" name="groomSubmit" id="concat-grooming">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -232,10 +232,11 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Clinic Services</h2>
 					</div>
+					<form role="form" method="post" action="services.php">
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
-							<select class="form-control" id="branch">
+							<select class="form-control" id="branch" name="serveBranch">
 								<option>SM City Calamba</option>
 								<option>Robison's Town Mall, Los Banos</option>
 								<option>Sunstar Mall</option>
@@ -245,13 +246,13 @@ include('session.php');
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="date">Choose the date for your schedule:</label>
-									<input type="date" class="form-control" id="date">
+									<input type="date" class="form-control" id="date" name="serveDate">
 								</div>
 							</div>
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age">
+									<input type="number" class="form-control" id="pet-age" name="servePetAge">
 								</div>
 							</div>
 						</div>
@@ -260,10 +261,10 @@ include('session.php');
 								<div class="form-group">
 									<label>Gender</label>
 									<div class="radio">
-										<label><input type="radio" name="optradio1">Male</label>
+										<label><input type="radio" name="servePetGender" value="Male">Male</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="optradio1">Female</label>
+										<label><input type="radio" name="servePetGender" value="Female">Female</label>
 									</div>
 								</div>
 							</div>
@@ -271,13 +272,13 @@ include('session.php');
 								<div class="form-group">
 									<label>Size of your pet</label>
 									<div class="radio">
-										<label><input type="radio" name="optradio2">Small</label>
+										<label><input type="radio" name="servePetSize" value="Small">Small</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="optradio2">Medium</label>
+										<label><input type="radio" name="servePetSize" value="Medium">Medium</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="optradio2">Large</label>
+										<label><input type="radio" name="servePetSize" value="Large">Large</label>
 									</div>
 								</div>
 							</div>
@@ -302,9 +303,10 @@ include('session.php');
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" name="serveSubmit" id="concat-services">Submit</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -337,5 +339,23 @@ include('session.php');
 				<li><a href="home-user.php">home</a></li>
 			</ul>
 		</footer>
+
+		<script type="text/javascript">
+		    $('#concat-grooming').on('click', function() {
+			    var val = $(':checked').map(function() {
+			        return this.value;
+			    }).get()
+
+			    // alert(val);
+			});
+
+			$('#concat-services').on('click', function() {
+			    var val = $(':checked').map(function() {
+			        return this.value;
+			    }).get()
+
+			    alert(val);
+			});
+		</script>
 	</body>
 </html>
