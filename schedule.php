@@ -70,7 +70,7 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Grooming</h2>
 					</div>
-					<form role="form" method="post" action="grooming.php">
+					<form method="post" action="grooming.php">
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="branch">Choose your nearest Petmalu Branch to you!</label>
@@ -232,7 +232,7 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Clinic Services</h2>
 					</div>
-					<form role="form" method="post" action="services.php">
+					<form method="post" action="services.php">
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
@@ -300,6 +300,7 @@ include('session.php');
 									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
 									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
 								</ul>
+								<input type="hidden" id="serveListId" name="serveListConcat">
 							</div>
 						</div>
 					</div>
@@ -363,9 +364,8 @@ include('session.php');
 				$('#serveList input:checked').each(function() {
 					names.push(this.value);
 				});
-				var listOfServices = document.getElementsByName("servecheckbox").value;
-				listOfServices = names;
-				alert(listOfServices);
+				document.getElementById("serveListId").value = names;
+				
 			    // var val = $(':checked').map(function() {
 			    //     return this.value;
 			    // }).get()
