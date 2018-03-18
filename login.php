@@ -21,7 +21,9 @@ session_start();
 		$rows = mysqli_num_rows($query);
 		
 		if ($rows == 1){
-			$_SESSION['login_user']=$username; // Initializing Session
+			session_start();
+			$_SESSION['login_user']=$username;
+			$_SESSION['id']=$id; // Initializing Session
 			// header("location: home-user.php"); // Redirecting To Other Page
 			echo "success";
 		} 
