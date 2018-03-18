@@ -288,17 +288,17 @@ include('session.php');
 						<div class="row">
 							<div class="col-md-6">
 								<ul style="list-style-type: none;" id="serveList">
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Dentistry">Dentistry</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Surgeries">Surgeries</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Prescription medication and diets">Prescription medication and diets</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Deworming">Deworming</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Senior pet health">Senior pet health</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Comprehensive physical examinations">Comprehensive physical examinations</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Laboratory services">Laboratory services</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Confinement for ill patients">Confinement for ill patients</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Health Certificates">Health Certificates</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
-									<li><div class="radio"><label><input type="checkbox" name="checkbox" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Dentistry">Dentistry</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Surgeries">Surgeries</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Prescription medication and diets">Prescription medication and diets</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Deworming">Deworming</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Senior pet health">Senior pet health</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Comprehensive physical examinations">Comprehensive physical examinations</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Laboratory services">Laboratory services</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Confinement for ill patients">Confinement for ill patients</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Health Certificates">Health Certificates</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Vaccination for puppies and kittens">Vaccination for puppies and kittens</label></div></li>
+									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
 								</ul>
 							</div>
 						</div>
@@ -363,7 +363,7 @@ include('session.php');
 				$('#serveList input:checked').each(function() {
 					names.push(this.value);
 				});
-				var listOfServices = document.getElementsByName("checkbox").value;
+				var listOfServices = document.getElementsByName("servecheckbox").value;
 				listOfServices = names;
 				alert(listOfServices);
 			    // var val = $(':checked').map(function() {
