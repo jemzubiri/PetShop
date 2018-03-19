@@ -61,6 +61,7 @@
 		<!-- Modals -->
 		<div class="modal fade" id="grooming-mdl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
+				<form>
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -70,7 +71,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
-							<select class="form-control" id="branch">
+							<select class="form-control" id="branch" required="">
 								<option>SM City Calamba</option>
 								<option>Robison's Town Mall, Los Banos</option>
 								<option>Sunstar Mall</option>
@@ -80,13 +81,13 @@
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="date">Choose the date for your schedule:</label>
-									<input type="date" class="form-control" id="date">
+									<input name="sched-date" type="date" class="form-control" id="date" required="">
 								</div>
 							</div>
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age">
+									<input type="number" class="form-control" id="pet-age" required="">
 								</div>
 							</div>
 						</div>
@@ -216,11 +217,13 @@
 						<button type="submit" class="btn btn-primary" id="concat-grooming">Submit</button>
 					</div>
 				</div>
+				<form>
 			</div>
 		</div>
 		<!--Clinic Services-->
 		<div class="modal fade" id="services-mdl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
+				<form>
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -230,7 +233,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
-							<select class="form-control" id="branch">
+							<select class="form-control" id="branch" required="">
 								<option>SM City Calamba</option>
 								<option>Robison's Town Mall, Los Banos</option>
 								<option>Sunstar Mall</option>
@@ -240,13 +243,13 @@
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="date">Choose the date for your schedule:</label>
-									<input type="date" class="form-control" id="date">
+									<input name="sched-date" type="date" class="form-control" id="date" required="">
 								</div>
 							</div>
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age">
+									<input type="number" class="form-control" id="pet-age" oninput="validity.valid||(value='');" required="">
 								</div>
 							</div>
 						</div>
@@ -301,6 +304,7 @@
 						<button type="submit" class="btn btn-primary" id="concat-services">Submit</button>
 					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 		<div class="container doctor-sched">
@@ -347,14 +351,14 @@
 												<label for="email" class="col-sm-2 control-label">
 												Email</label>
 												<div class="col-sm-10">
-													<input type="email" name="email" class="form-control" id="email" placeholder="Email" />
+													<input type="email" name="email" class="form-control" id="email" placeholder="Email" required="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="exampleInputPassword1" class="col-sm-2 control-label">
 												Password</label>
 												<div class="col-sm-10">
-													<input type="password" name="password" class="form-control" id="password" placeholder="" />
+													<input type="password" name="password" class="form-control" id="password" placeholder="" required="">
 												</div>
 											</div>
 											<div class="row">
@@ -376,7 +380,7 @@
 												<div class="col-sm-10">
 													<div class="row">
 														<div class="col-sm-12">
-															<input type="text" class="form-control" placeholder="Name" />
+															<input type="text" class="form-control" placeholder="Name" required="">
 														</div>
 													</div>
 												</div>
@@ -385,35 +389,35 @@
 												<label for="age" class="col-sm-2 control-label">
 												Age</label>
 												<div class="col-sm-10">
-													<input type="number" class="form-control" id="age" placeholder="Age" />
+													<input type="number" class="form-control" id="age" placeholder="Age" oninput="validity.valid||(value='');" required="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="address" class="col-sm-2 control-label">
 												Address</label>
 												<div class="col-sm-10">
-													<input type="text" class="form-control" id="address" placeholder="Address" />
+													<input type="text" class="form-control" id="address" placeholder="Address" required="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="birthday" class="col-sm-2 control-label">
 												Birthday</label>
 												<div class="col-sm-10">
-													<input type="date" class="form-control" id="birthday" placeholder="" />
+													<input type="date" class="form-control" id="birthday" placeholder="" required="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="email" class="col-sm-2 control-label">
 												Email</label>
 												<div class="col-sm-10">
-													<input type="email" class="form-control" id="regEmail" placeholder="Email" />
+													<input type="email" class="form-control" id="regEmail" placeholder="Email" required="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="password" class="col-sm-2 control-label">
 												Password</label>
 												<div class="col-sm-10">
-													<input type="password" class="form-control" id="regpassword" placeholder="" />
+													<input type="password" class="form-control" id="regpassword" placeholder="" required="">
 												</div>
 											</div>
 											<div class="form-group">
@@ -421,7 +425,7 @@
 													<label for="upload" class="col-sm-4 control-label">
 													Select image of your pet to upload:</label>
 													<div class="col-sm-8">
-														<input type="file" name="fileToUpload" id="fileToUpload"  style="padding-bottom: 10px;">
+														<input type="file" name="fileToUpload" id="fileToUpload"  style="padding-bottom: 10px;" required="">
 														<input type="submit" value="Upload Image" name="submit" class="upload-btn">
 													</div>
 												</div>
@@ -429,14 +433,14 @@
 													<label for="pet-name" class="col-sm-2 control-label">
 													Pet's name</label>
 													<div class="col-sm-10">
-														<input type="text" class="form-control" id="pet-name" placeholder="" />
+														<input type="text" class="form-control" id="pet-name" placeholder="" required="">
 													</div>
 												</div>
 												<div class="form-group">
 													<label for="breed" class="col-sm-2 control-label">
 													Breed</label>
 													<div class="col-sm-10">
-														<input type="text" class="form-control" id="breed" placeholder="" />
+														<input type="text" class="form-control" id="breed" placeholder="" required="">
 													</div>
 												</div>
 												<div class="form-group">
@@ -458,7 +462,7 @@
 													<label for="color" class="col-sm-2 control-label">
 													Color</label>
 													<div class="col-sm-6">
-														<input type="text" class="form-control" id="color" placeholder="" />
+														<input type="text" class="form-control" id="color" placeholder="" required="">
 													</div>
 												</div>
 												
@@ -517,6 +521,9 @@
 
 			    alert(val);
 			});
+
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementsByName("sched-date")[0].setAttribute('min', today);
 		</script>
 	</body>
 </html>

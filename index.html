@@ -73,14 +73,14 @@
                                                 <label for="email" class="col-sm-2 control-label">
                                                 Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" />
+                                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1" class="col-sm-2 control-label">
                                                 Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" />
+                                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required="">
                                                 </div>
                                             </div>
                                             
@@ -136,7 +136,7 @@
                                                 <div class="col-sm-10">
                                                     <div class="row">
                                                         <div class="col-sm-12">
-                                                            <input type="text" name="userName" class="form-control" placeholder="Name" />
+                                                            <input type="text" name="userName" class="form-control" placeholder="Name" required="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,35 +145,35 @@
                                                 <label for="age" class="col-sm-2 control-label">
                                                 Age</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" name="userAge" class="form-control" id="age" placeholder="Age" min="0" />
+                                                    <input type="number" name="userAge" class="form-control" id="age" placeholder="Age" min="0" oninput="validity.valid||(value='');" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="address" class="col-sm-2 control-label">
                                                 Address</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="userAddress" class="form-control" id="address" placeholder="Address" />
+                                                    <input type="text" name="userAddress" class="form-control" id="address" placeholder="Address" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="birthday" class="col-sm-2 control-label">
                                                 Birthday</label>
                                                 <div class="col-sm-10">
-                                                    <input type="date" name="userBirthday" class="form-control" id="birthday" placeholder="" />
+                                                    <input type="date" name="userBirthday" class="form-control" id="birthday" placeholder="" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">
                                                 Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" name="userEmail" class="form-control" id="regEmail" placeholder="Email" />
+                                                    <input type="email" name="userEmail" class="form-control" id="regEmail" placeholder="Email" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password" class="col-sm-2 control-label">
                                                 Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" name="userPassword" class="form-control" placeholder="" />
+                                                    <input type="password" name="userPassword" class="form-control" placeholder="" required="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -181,7 +181,7 @@
                                                     <label for="upload" class="col-sm-4 control-label">
                                                     Select image of your pet to upload:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="file" name="userImage" id="fileToUpload"  style="padding-bottom: 10px;">
+                                                        <input type="file" name="userImage" id="fileToUpload"  style="padding-bottom: 10px;" required="">
                                                         <input type="submit" value="Upload Image" name="userImage" class="upload-btn">
                                                     </div>
                                                 </div>
@@ -189,14 +189,14 @@
                                                     <label for="pet-name" class="col-sm-2 control-label">
                                                     Pet's name</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" name="userPetName" class="form-control" id="pet-name" placeholder="" />
+                                                        <input type="text" name="userPetName" class="form-control" id="pet-name" placeholder="" required="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="breed" class="col-sm-2 control-label">
                                                     Breed</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" name="userPetBreed" class="form-control" id="breed" placeholder="" />
+                                                        <input type="text" name="userPetBreed" class="form-control" id="breed" placeholder="" required="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -204,13 +204,13 @@
                                                     Size of your pet</label>
                                                     <div class="col-sm-10">
                                                         <div class="radio">
-                                                            <label><input type="radio" name="userPetSize" value="Small">Small</label>
+                                                            <label><input type="radio" name="userPetSize" value="Small" required="">Small</label>
                                                         </div>
                                                         <div class="radio">
-                                                            <label><input type="radio" name="userPetSize" value="Medium">Medium</label>
+                                                            <label><input type="radio" name="userPetSize" value="Medium" required="">Medium</label>
                                                         </div>
                                                         <div class="radio">
-                                                            <label><input type="radio" name="userPetSize" value="Large">Large</label>
+                                                            <label><input type="radio" name="userPetSize" value="Large" required="">Large</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -218,7 +218,7 @@
                                                     <label for="color" class="col-sm-2 control-label">
                                                     Color</label>
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-control" name="userPetColor" id="color" placeholder="" />
+                                                        <input type="text" class="form-control" name="userPetColor" id="color" placeholder="" required="">
                                                     </div>
                                                 </div>
                                             <div class="row">
@@ -229,7 +229,7 @@
                                                     Submit</button>
                                                     <button type="button" class="btn btn-default btn-sm" style="height: 40px;">
                                                     Cancel</button>
-                                                    </form>
+                                                   
                                                 </div>
                                             </div>
                                         </form>
