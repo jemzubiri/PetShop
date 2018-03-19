@@ -2,19 +2,18 @@
 include('session.php');
 
 // FOR GROOMING
-$tablesql = mysqli_query($connection,"SELECT usertbl.id,groomingtbl.referenceNo,usertbl.userName,usertbl.userPetName,groomingtbl.groomList,groomingtbl.groomDate FROM usertbl INNER JOIN groomingtbl ON usertbl.id = groomingtbl.userId WHERE groomingtbl.isActive='no'");
+$tablesql = mysqli_query($connection,"SELECT usertbl.id,groomingtbl.referenceNo,usertbl.userName,usertbl.userPetName,groomingtbl.groomList,groomingtbl.groomDate,groomingtbl.groomId FROM usertbl INNER JOIN groomingtbl ON usertbl.id = groomingtbl.userId WHERE groomingtbl.isActive='no'");
 $rowcount = mysqli_num_rows($tablesql);
 
-$result = $connection->query("SELECT usertbl.id,groomingtbl.referenceNo,usertbl.userName,usertbl.userPetName,groomingtbl.groomList,groomingtbl.groomDate FROM usertbl INNER JOIN groomingtbl ON usertbl.id = groomingtbl.userId WHERE groomingtbl.isActive='no'");
+$result = $connection->query("SELECT usertbl.id,groomingtbl.referenceNo,usertbl.userName,usertbl.userPetName,groomingtbl.groomList,groomingtbl.groomDate,groomingtbl.groomId FROM usertbl INNER JOIN groomingtbl ON usertbl.id = groomingtbl.userId WHERE groomingtbl.isActive='no'");
 $resultArray = mysqli_fetch_all($result, MYSQLI_NUM);
 
 //FOR SERVICES
-$tablesqlserv = mysqli_query($connection,"SELECT usertbl.id,servicestbl.referenceNo,usertbl.userName,usertbl.userPetName,servicestbl.serveList,servicestbl.serveDate FROM usertbl INNER JOIN servicestbl ON usertbl.id = servicestbl.userId WHERE servicestbl.isActive='no'");
+$tablesqlserv = mysqli_query($connection,"SELECT usertbl.id,servicestbl.referenceNo,usertbl.userName,usertbl.userPetName,servicestbl.serveList,servicestbl.serveDate,servicestbl.serveId FROM usertbl INNER JOIN servicestbl ON usertbl.id = servicestbl.userId WHERE servicestbl.isActive='no'");
 $rowcountserv = mysqli_num_rows($tablesqlserv);
 
-$resultserv = $connection->query("SELECT usertbl.id,servicestbl.referenceNo,usertbl.userName,usertbl.userPetName,servicestbl.serveList,servicestbl.serveDate FROM usertbl INNER JOIN servicestbl ON usertbl.id = servicestbl.userId WHERE servicestbl.isActive='no'");
+$resultserv = $connection->query("SELECT usertbl.id,servicestbl.referenceNo,usertbl.userName,usertbl.userPetName,servicestbl.serveList,servicestbl.serveDate,servicestbl.serveId FROM usertbl INNER JOIN servicestbl ON usertbl.id = servicestbl.userId WHERE servicestbl.isActive='no'");
 $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
-
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +50,7 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
                 <th scope="col">Name</th>
                 <th scope="col">Pet Name</th>
                 <th scope="col">Grooming requests</th>
-                <th scope="col">Date</th>
+                <th scope="col" width="10%">Date</th>
                 <th scope="col">Confirm schedule</th>
                 </tr>
             </thead>
@@ -59,12 +58,13 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
                 <?php
                 
                 for($ctr= 0; $ctr < $rowcount; $ctr++){
-                    echo'<tr>';
+                    echo'<tr id="'.$resultArray[$ctr][6].'">';
                     for($colCtr = 0; $colCtr < 6 ; $colCtr++){
                         echo'<td>'.$resultArray[$ctr][$colCtr].'</td>';
                     
                     }
-                    echo'<td><input type="checkbox" name="confirmSched" value="'.$resultArray[$ctr][1].'"></td>';
+                    echo'<td><button type="submit" onclick="passGroomId('.$resultArray[$ctr][6].')" class="btn btn-primary btn-sm" style="height: 40px;">
+                    Confirm</button></td>';
                     // echo'<td>'.$userId[$ctr].'</td>';
                     echo'</tr>';
                 }
@@ -91,12 +91,13 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
                 <?php
                 
                 for($ctr= 0; $ctr < $rowcountserv; $ctr++){
-                    echo'<tr>';
+                    echo'<tr id="'.$resultArrayserv[$ctr][6].'">';
                     for($colCtr = 0; $colCtr < 6 ; $colCtr++){
                         echo'<td>'.$resultArrayserv[$ctr][$colCtr].'</td>';
                     
                     }
-                    echo'<td><button type="submit" id="btnConfirm" name="confirmSched" class="btn btn-primary btn-sm" style="height: 40px;"></td>';
+                    echo'<td><button type="submit" onclick="passServId('.$resultArrayserv[$ctr][6].')" class="btn btn-primary btn-sm" style="height: 40px;">
+                    Confirm</button></td>';
                     // echo'<td>'.$userId[$ctr].'</td>';
                     echo'</tr>';
                 }
@@ -106,10 +107,43 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
         </div>
     </section>
     <footer>
-            <div class="container">
-                <img src="images/logo-bnw-1.png">
-                <p>&copy; 2018 All rights reserved</p>
-            </div>
-        </footer>
+        <div class="container">
+            <img src="images/logo-bnw-1.png">
+            <p>&copy; 2018 All rights reserved</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    function passGroomId(groomId){
+        var strId = "'" +groomId+ "'";
+        var hide = document.getElementById(groomId);
+        hide.style.display = "none";
+        
+        var groomId= groomId;
+        $.ajax({
+            type: "GET",
+            url: "confirmSchedGrooming.php",
+            data:{groomId: groomId},
+            success: function(data){
+                console.log(data);
+            }
+        });
+    }
+    function passServId(servId){
+        var strId = "'" +servId+ "'";
+        var hideserv = document.getElementById(servId);
+        hideserv.style.display = "none";
+        
+        var servId= servId;
+        $.ajax({
+            type: "GET",
+            url: "confirmSchedService.php",
+            data:{servId: servId},
+            success: function(data){
+                console.log(data);
+            }
+        });
+    }
+    </script>
+
     </body>
 </html>
