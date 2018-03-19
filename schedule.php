@@ -84,13 +84,13 @@ include('session.php');
 								<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 									<div class="form-group">
 										<label for="date">Choose the date for your schedule:</label>
-										<input type="date" class="form-control" id="date" name="date"> 
+										<input type="date" class="form-control" id="date" name="date" required=""> 
 									</div>
 								</div>
 								<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 									<div class="form-group">
 										<label for="pet-age">Pet Age:</label>
-										<input type="number" class="form-control" id="petage" name="petage">
+										<input type="number" class="form-control" id="petage" name="petage" required="">
 									</div>
 								</div>
 							</div>
@@ -99,10 +99,10 @@ include('session.php');
 									<div class="form-group">
 										<label>Gender</label>
 										<div class="radio">
-											<label><input type="radio" id="petgender" name="petgender" value="Male">Male</label>
+											<label><input type="radio" id="petgender" name="petgender" value="Male" required="">Male</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" id="petgender" name="petgender" value="Female">Female</label>
+											<label><input type="radio" id="petgender" name="petgender" value="Female" required="">Female</label>
 										</div>
 									</div>
 								</div>
@@ -110,13 +110,13 @@ include('session.php');
 									<div class="form-group">
 										<label>Size of your pet</label>
 										<div class="radio">
-											<label><input type="radio" id="petsize" name="petsize" value="Small">Small</label>
+											<label><input type="radio" id="petsize" name="petsize" value="Small" required="">Small</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" id="petsize" name="petsize" value="Medium">Medium</label>
+											<label><input type="radio" id="petsize" name="petsize" value="Medium" required="">Medium</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" id="petsize" name="petsize" value="Large">Large</label>
+											<label><input type="radio" id="petsize" name="petsize" value="Large" required="">Large</label>
 										</div>
 									</div>
 								</div>
@@ -246,13 +246,13 @@ include('session.php');
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="date">Choose the date for your schedule:</label>
-									<input type="date" class="form-control" id="date" name="serveDate">
+									<input type="date" class="form-control" id="date" name="serveDate" required="">
 								</div>
 							</div>
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age" name="servePetAge">
+									<input type="number" class="form-control" id="pet-age" name="servePetAge" required="">
 								</div>
 							</div>
 						</div>
@@ -261,10 +261,10 @@ include('session.php');
 								<div class="form-group">
 									<label>Gender</label>
 									<div class="radio">
-										<label><input type="radio" name="servePetGender" value="Male">Male</label>
+										<label><input type="radio" name="servePetGender" value="Male" required="">Male</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="servePetGender" value="Female">Female</label>
+										<label><input type="radio" name="servePetGender" value="Female" required="">Female</label>
 									</div>
 								</div>
 							</div>
@@ -272,13 +272,13 @@ include('session.php');
 								<div class="form-group">
 									<label>Size of your pet</label>
 									<div class="radio">
-										<label><input type="radio" name="servePetSize" value="Small">Small</label>
+										<label><input type="radio" name="servePetSize" value="Small" required="">Small</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="servePetSize" value="Medium">Medium</label>
+										<label><input type="radio" name="servePetSize" value="Medium" required="">Medium</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="servePetSize" value="Large">Large</label>
+										<label><input type="radio" name="servePetSize" value="Large" required="">Large</label>
 									</div>
 								</div>
 							</div>
@@ -357,7 +357,9 @@ include('session.php');
 
 			    // alert(val);
 			});
-
+			var today = new Date().toISOString().split('T')[0];
+			document.getElementsByName("date")[0].setAttribute('min', today);
+			
 			$('#concat-services').on('click', function() {
 				var names = [];
 				
@@ -369,9 +371,10 @@ include('session.php');
 			    // var val = $(':checked').map(function() {
 			    //     return this.value;
 			    // }).get()
-
 			    // alert(val);
 			});
+			var today = new Date().toISOString().split('T')[0];
+        	document.getElementsByName("serveData")[0].setAttribute('min', today);
 		</script>
 	</body>
 </html>
