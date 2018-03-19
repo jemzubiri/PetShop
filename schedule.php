@@ -314,21 +314,6 @@ include('session.php');
 				</div>
 			</div>
 		</div>
-		<div class="container doctor-sched">
-			<center>
-			<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#view-sched" style="width: 200px;">View Doctor's Schedule</button>
-			<div id="view-sched" class="collapse out" >
-				<div class="row">
-					<div class="col-md-6">
-						<h2>Clinic Schedule</h2>
-					</div>
-					<div class="col-md-6">
-						<h2>Grooming Schedule</h2>
-					</div>
-				</div>
-			</div>
-			</center>
-		</div>
 		<footer>
 			<div class="container">
 				<img src="images/logo-bnw-1.png">
@@ -383,11 +368,9 @@ include('session.php');
 			
 			function refGenerateGrooming(){
 				document.getElementById("groomingReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
-				alert(document.getElementById("groomingReferenceNo").value);
 				}
 			function refGenerateServices(){
 				document.getElementById("serviceReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
-				alert(document.getElementById("serviceReferenceNo").value);
 			}
 		</script>
 	</body>

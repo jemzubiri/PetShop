@@ -40,7 +40,7 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
         </button>
     </div> 
 
-    <section>
+    <section style="padding-top:0px">
         <table class="table"  style="height:450px; overflow-y: scroll; overflow-x: hidden; display: inline-block">
         <center><h1 style="position: center">Grooming schedule</h1></center>
             <thead>
