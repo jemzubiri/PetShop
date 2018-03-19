@@ -70,7 +70,7 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Grooming</h2>
 					</div>
-					<form method="post" action="grooming.php">
+					<form method="post" action="grooming.php" onsubmit="refGenerateGrooming()">
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="branch">Choose your nearest Petmalu Branch to you!</label>
@@ -214,6 +214,7 @@ include('session.php');
 									</div>
 								</div>
 							</div>
+							<input type ="hidden" id="groomingReferenceNo" name="groomingreferenceNo">
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary" name="groomSubmit" id="concat-grooming">Submit</button>
@@ -232,7 +233,7 @@ include('session.php');
 						<span aria-hidden="true">&times;</span></button>
 						<h2 class="modal-title">Clinic Services</h2>
 					</div>
-					<form method="post" action="services.php">
+					<form method="post" action="services.php" onsubmit="refGenerateServices()">
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="branch">Choose your nearest Petmalu Branch to you!</label>
@@ -301,8 +302,10 @@ include('session.php');
 									<li><div class="radio"><label><input type="checkbox" name="servecheckbox" value="Wellness consultations and examinations">Wellness consultations and examinations</label></div></li>
 								</ul>
 								<input type="hidden" id="serveListId" name="serveListConcat">
+								<input type ="hidden" id="serviceReferenceNo" name="serviceReferenceNo">
 							</div>
 						</div>
+						
 					</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary" name="serveSubmit" id="concat-services">Submit</button>
@@ -354,11 +357,11 @@ include('session.php');
 			    // var val = $(':checked').map(function() {
 			    //     return this.value;
 			    // }).get()
-
-			    // alert(val);
+				
+				// alert(val);
 			});
 			var today = new Date().toISOString().split('T')[0];
-			document.getElementsByName("date")[0].setAttribute('min', today);
+			document.getElementsByName("serveDate")[0].setAttribute('min', today);
 			
 			$('#concat-services').on('click', function() {
 				var names = [];
@@ -371,10 +374,21 @@ include('session.php');
 			    // var val = $(':checked').map(function() {
 			    //     return this.value;
 			    // }).get()
-			    // alert(val);
+				// alert(val);
 			});
-			var today = new Date().toISOString().split('T')[0];
-        	document.getElementsByName("serveData")[0].setAttribute('min', today);
+			
+			
+			var today1 = new Date().toISOString().split('T')[0];
+			document.getElementsByName("date")[0].setAttribute('min', today1);
+			
+			function refGenerateGrooming(){
+				document.getElementById("groomingReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
+				alert(document.getElementById("groomingReferenceNo").value);
+				}
+			function refGenerateServices(){
+				document.getElementById("serviceReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
+				alert(document.getElementById("serviceReferenceNo").value);
+			}
 		</script>
 	</body>
 </html>

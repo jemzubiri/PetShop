@@ -54,7 +54,7 @@ $('#btnEmployeeLogin').on('click',function(){
 					window.location="doctor.php";
 				}
 				if(data =="error"){
-					$('#loginError').text("Username and password not valid");
+					$('#employeeLoginError').text("Username and password not valid");
 				}
 			}
 		});
