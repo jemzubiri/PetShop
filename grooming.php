@@ -1,13 +1,11 @@
 <?php 	
-	error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-
+	include 'session.php';
+	$_SESSION["id"] = $id;
 	$conn = mysqli_connect('localhost', 'root', '', 'petshopdb') or die("CONNCECTION FAILED".mysqli_connect_error());
 	if(isset($_POST["groomSubmit"])){
-			$sql_insert =  "INSERT INTO groomingtbl(groomBranch,groomDate,groomPetAge,groomPetGender,groomPetSize,groomList) 
-			VALUES ('$_POST[branch]','$_POST[date]','$_POST[petage]','$_POST[petgender]','$_POST[petsize]','$_POST[checkbox]')";
-// ,groomList
-// ,'$_POST[groomList]'
+			$sql_insert =  "INSERT INTO groomingtbl(groomBranch,groomDate,groomPetAge,groomPetGender,groomPetSize,groomList,userId) 
+			VALUES ('$_POST[branch]','$_POST[date]','$_POST[petage]','$_POST[petgender]','$_POST[petsize]','$_POST[checkbox]','$id')";
+			echo $sql_insert;
 		if ($conn->query($sql_insert) === TRUE) {
 			header("location: groomingConfirmation.php");
 		} else {

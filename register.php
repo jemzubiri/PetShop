@@ -11,8 +11,8 @@
 
 
 	if(isset($_POST["regSubmit"])){
-			$sql_insert =  "INSERT INTO usertbl(userName,userAge,userAddress,userBirthday,userEmail,userPassword,userImage,userPetName,userPetBreed,userPetSize,userPetColor) 
-			VALUES ('$_POST[userName]','$_POST[userAge]','$_POST[userAddress]','$_POST[userBirthday]','$_POST[userEmail]','$_POST[userPassword]','.$file_to_be_saved','$_POST[userPetName]','$_POST[userPetBreed]','$_POST[userPetSize]','$_POST[userPetColor]')";
+			$sql_insert =  "INSERT INTO usertbl(userName,userAge,userAddress,userBirthday,userEmail,userPassword,userImage,userPetName,userPetBreed,userPetSize,userPetColor,userRole) 
+			VALUES ('$_POST[userName]','$_POST[userAge]','$_POST[userAddress]','$_POST[userBirthday]','$_POST[userEmail]','$_POST[userPassword]','.$file_to_be_saved','$_POST[userPetName]','$_POST[userPetBreed]','$_POST[userPetSize]','$_POST[userPetColor]','Member')";
 
 		if ($conn->query($sql_insert) === TRUE) {
 			echo "New record created successfully";
