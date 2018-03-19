@@ -45,16 +45,16 @@ $('#btnEmployeeLogin').on('click',function(){
 					$('#employeeLoginError').text("User is only a member, go to Login pane");
 				}
 				if(data == "admin login"){
-					window.location="admin.html";
+					window.location="admin.php";
 				}
 				if(data == "secretary login"){
-					window.location="home-user.php";
+					window.location="secretary.php";
 				}
 				if(data == "doctor login"){
-					window.location="doctor.html";
+					window.location="doctor.php";
 				}
 				if(data =="error"){
-					window.location="home-user.php";
+					$('#loginError').text("Username and password not valid");
 				}
 			}
 		});
