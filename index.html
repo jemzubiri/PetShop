@@ -324,5 +324,9 @@
             </ul>
         </footer>
         <script src="js/login.js"></script>
+        <script type="text/javascript">
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("userBirthday")[0].setAttribute('max', today);
+        </script>
     </body>
 </html>
