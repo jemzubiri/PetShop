@@ -1,5 +1,11 @@
 <?php
 include('session.php');
+
+
+$result = $connection->query("SELECT referenceNo from groomingtbl where groomId = (SELECT MAX(groomId) FROM groomingtbl)");
+$resultArray = mysqli_fetch_all($result, MYSQLI_NUM);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +51,8 @@ include('session.php');
 	        <li><a href="#">products</a></li>
 	        <li><a href="gallery.php">gallery</a></li>
 	        <li><a href="contact-us.php">contact us</a></li>
-	        <li><a href="schedule.php">schedule</a></li>
+            <li><a href="schedule.php">schedule</a></li>
+            <li><a href="account-settings.php">account</a></li>
 	        <li><a href="logout.php" >logout</a></li>
 	      </ul>
 	    </div>
@@ -55,7 +62,8 @@ include('session.php');
 	<section style="height: 90vh;">
 		<div class="container">
 			<center>
-			<h1>Your grooming schedule has been recorded!</h1>
+            <h1>Your grooming schedule has been recorded with reference number "<?php echo implode("",$resultArray[0]); ?>"</h1>
+            
 			<img src="images/logo.png" style="width: 300px;height: 300px;">
 			</center>
 		</div>

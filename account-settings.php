@@ -48,39 +48,53 @@ include('session.php');
                 </div>
             </div>
         </nav>
-        <section>
-        <div class="container">
-            <center><h2>Edit Account Details</h2>
+        <section> 
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6" style="padding-bottom: 50px; float: ">
-                        <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">
-                            Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="" />
+            <center><h1>Edit Account Details</h1></center>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4" style="padding-bottom: 50px;">
+                            <input type="hidden" class="hidden" id="id" value="<?php echo $id; ?>"></p>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-4 control-label">
+                                Email/Username</label>
+                                <input type="text" class="form-control" id="email" name= "email" value="<?php echo $userEmail; ?>" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass" class="col-sm-4 control-label">
+                                Password</label>
+                                <input type="text" class="form-control" id="pass" name="email" value="<?php echo $userPass; ?>" />
+                            </div>
+                            <div class="form-group">
+                                <label for="role" class="col-sm-4 control-label">
+                                User Role</label>
+                                <input type="text" class="form-control" id="role" name="userRole" value="<?php echo $userRole; ?>" disabled="true" />
+                            </div>
+                            <button type="submit" id="editAccount" class="btn btn-primary btn-sm" name="editSubmit" style="height: 40px;" > 
+                            Submit</button>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">
-                            Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="mobile" class="col-sm-2 control-label">
-                            Mobile #</label>
-                            <input type="text" class="form-control" id="mobile" placeholder="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="mobile" class="col-sm-2 control-label">
-                            Message</label>
-                            <textarea style="width:460px; height:150px; resize: none;"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-sm" style="height: 40px;">
-                        Submit</button>
                     </div>
-                </div>
             </div>
         </div>
+        <div class="modal fade" id="submitted" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <center>
+                            <img src="images/logo.png" style="width: 100px; height: 100px;">
+                            </center>
+                            <h4 class="modal-title" id="myModalLabel">
+                        </div>
+                        <div class="modal-body" align="center">
+                        <h1>Account Successfully Updated!</h1>
+                        <h1 style="font-size:15px">You'll be redirected to the login page </h1><br>
+                        <button type="button" class="btn btn-primary btn-sm" id="redirectMe">Login</button>
+                        </div>
+                    </div>
+                </div>
         </section>
+        <!-- MODAL -->
+           
         <footer>
             <div class="container">
                 <img src="images/logo-bnw-1.png">
@@ -95,5 +109,26 @@ include('session.php');
                 <li class="active"><a href="home-user.php">home</a></li>
             </ul>
         </footer>
+        <script>
+            $('#editAccount').on('click', function() {
+                var idSubmit = document.getElementById('id').value;
+                var emailSubmit = document.getElementById('email').value;
+                var passSubmit = document.getElementById('pass').value;
+                var roleSubmit = document.getElementById('role').value;
+                
+				$.ajax({
+                    type: "GET",
+                    url: "edit-account.php",
+                    data: {emailSubmit: emailSubmit, passSubmit:passSubmit, idSubmit:idSubmit},
+                    success: function(data){
+                        console.log(data);
+                    } 
+                });
+                $('#submitted').modal('toggle');
+            });
+            $('#redirectMe').on('click', function(){
+                window.location = "index.html";
+            });
+        </script>
     </body>
 </html>

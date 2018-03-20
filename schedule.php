@@ -39,6 +39,7 @@ include('session.php');
 						<li><a href="gallery.php">gallery</a></li>
 						<li><a href="contact-us.php">contact us</a></li>
 						<li class="active"><a href="#">schedule</a></li>
+						<li><a href="account-settings.php">account</a></li>
 						<li><a href="logout.php">logout</a></li>
 					</ul>
 				</div>
@@ -90,7 +91,7 @@ include('session.php');
 								<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 									<div class="form-group">
 										<label for="pet-age">Pet Age:</label>
-										<input type="number" class="form-control" id="petage" name="petage" required="">
+										<input type="number" class="form-control" id="petage" name="petage" required="" min="0">
 									</div>
 								</div>
 							</div>
@@ -253,7 +254,7 @@ include('session.php');
 							<div class="col-md-6" style="padding-left: 15px; padding-right: 15px;">
 								<div class="form-group">
 									<label for="pet-age">Pet Age:</label>
-									<input type="number" class="form-control" id="pet-age" name="servePetAge" required="">
+									<input type="number" class="form-control" id="pet-age" name="servePetAge" required="" min="0">
 								</div>
 							</div>
 						</div>
@@ -368,7 +369,16 @@ include('session.php');
 			
 			function refGenerateGrooming(){
 				document.getElementById("groomingReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
-				}
+				groomRefNo = document.getElementById("groomingReferenceNo").value;
+				$.ajax({
+					type:"GET",
+					url:"grooming.php",
+					data:{groomRefNo:groomRefNo},
+					success:function(data){
+						console.log(data);
+					}
+				});
+			}
 			function refGenerateServices(){
 				document.getElementById("serviceReferenceNo").value = '_' + Math.random().toString(36).substr(2, 9);
 			}

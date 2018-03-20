@@ -1,6 +1,7 @@
 <?php 	
 	include 'session.php';
 	$_SESSION["id"] = $id;
+	echo $id;
 	$conn = mysqli_connect('localhost', 'root', '', 'petshopdb') or die("CONNCECTION FAILED".mysqli_connect_error());
 	if(isset($_POST["groomSubmit"])){
 			$sql_insert =  "INSERT INTO groomingtbl(groomBranch,groomDate,groomPetAge,groomPetGender,groomPetSize,groomList,userId,referenceNo,isActive) 

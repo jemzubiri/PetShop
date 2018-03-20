@@ -39,6 +39,7 @@ include('session.php');
                         <li  class="active"><a href="#">gallery</a></li>
                         <li><a href="contact-us.php">contact us</a></li>
                         <li><a href="schedule.php">schedule</a></li>
+                        <li><a href="account-settings.php">account</a></li>
                         <li><a href="logout.php">logout</a></li>
                     </ul>
                 </div>
