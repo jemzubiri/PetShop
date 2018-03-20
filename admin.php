@@ -1,5 +1,12 @@
 <?php
 include('session.php');
+
+$tablesql = mysqli_query($connection,"SELECT userName,userEmail,userPassword,userRole FROM usertbl WHERE userRole !='Member'");
+$rowcount = mysqli_num_rows($tablesql);
+
+$result = $connection->query("SELECT userName,userEmail,userPassword,userRole FROM usertbl WHERE userRole !='Member'");
+$resultArray = mysqli_fetch_all($result, MYSQLI_NUM);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,14 +32,39 @@ include('session.php');
         </button>
     </div> 
 
-    <section style="height: 100vh;">
-        
+    <section style="height: 100vh; padding-top:0px">
+    <table class="table" >
+        <center><h1 style="position: center">Grooming schedule</h1></center>
+            <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email/Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">User Role</th>
+                </tr>
+            </thead>
+            <tbody >
+                <?php
+                
+                for($ctr= 0; $ctr < $rowcount; $ctr++){
+                    echo'<tr>';
+                    for($colCtr = 0; $colCtr < 4 ; $colCtr++){
+                        echo'<td>'.$resultArray[$ctr][$colCtr].'</td>';
+                    
+                    }
+                    // echo'<td>'.$userId[$ctr].'</td>';
+                    echo'</tr>';
+                }
+                ?>
+            </tbody>
+        </table>
     </section>
+
     <footer>
             <div class="container">
                 <img src="images/logo-bnw-1.png">
                 <p>&copy; 2018 All rights reserved</p>
             </div>
-        </footer>
+    </footer>
     </body>
 </html>
