@@ -38,6 +38,9 @@ $resultArrayserv = mysqli_fetch_all($resultserv, MYSQLI_NUM);
         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="logout.php" style="margin: 20px;" onclick="document.location.href='logout.php';">
             LOGOUT
         </button>
+        <button type="button" id="editPane" class="btn btn-primary pull-right" data-toggle="modal" data-target="logout.php" style="margin: 20px;">
+                ACCOUNT
+        </button>
     </div> 
 
     <section style="padding-top:0px">
